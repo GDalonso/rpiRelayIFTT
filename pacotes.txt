@@ -1,1 +1,2 @@
 sudo apt-get install python3-flask
+sudo pip3 install adafruit-io

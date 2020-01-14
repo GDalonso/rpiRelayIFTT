@@ -13,7 +13,8 @@ definePinoComoSaida(12)
 
 
 def connected(client):
-    client.subscribe('testrpi') # or change to whatever name you used
+	adafruit_Feed='testrpi' #change to the name of your feed
+	client.subscribe(adafruit_Feed)
 
 def message(client, feed_id, payload):
 	print(payload)
@@ -29,8 +30,8 @@ def message(client, feed_id, payload):
 		print("relay ainda ainda não implementado")
 
 
-adafruit_Username='Dalonso'
-adafruit_Key='aio_ClzS14KFNXbYHWmoD7jmqr0qnbXf'
+adafruit_Username='Dalonso' #change to your username
+adafruit_Key='aio_ClzS14KFNXbYHWmoD7jmqr0qnbXf' #change to your adafruit key
 client = MQTTClient(username=adafruit_Username, key=adafruit_Key)
 
 # Setup the callback functions defined above.
