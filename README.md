@@ -1,5 +1,5 @@
 # rpiRelayIFTT
-Controle de um relay com uma raspberry pi via google assistant e IFTT usando Adafruit.io, Flask, MQTT e RPI.GPIO
+Controle de um relay com uma raspberry pi via google assistant e IFTT usando Adafruit.io, MQTT e RPI.GPIO
 
 
 Setup
