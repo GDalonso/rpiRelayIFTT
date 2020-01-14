@@ -7,6 +7,8 @@ inicializaBoard()
 definePinoComoSaida(11)
 #Relay 2
 definePinoComoSaida(12)
+#LED
+definePinoComoSaida(15)
 
 # aio = Client(username='Dalonso', key='aio_ClzS14KFNXbYHWmoD7jmqr0qnbXf')
 # aio.send('testrpi', randint(0,50))
@@ -26,6 +28,11 @@ def message(client, feed_id, payload):
 		escreveParaPorta(12,0)
 	elif payload.lower() == '2off':
 		escreveParaPorta(12,1)
+	# tá invertido por motivos de LED faz mais sentido que relay
+	elif payload.lower() == '3on':
+		escreveParaPorta(15,1)
+	elif payload.lower() == '3off':
+		escreveParaPorta(15,0)
 	else:
 		print("relay ainda ainda não implementado")
 
