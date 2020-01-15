@@ -8,6 +8,7 @@ Controle de um relay com uma raspberry pi via google assistant e IFTT usando Ada
 - criar conta no adafruit.io
 - criar um feed
 - definir variáveis adafruit_Username com username e adafruit_Key com a key do seu projeto
+- `sudo pip3 install adafruit-io`
 
 ### IFTTT
 - Criar um applet
