@@ -1,21 +1,24 @@
 from Adafruit_IO import Client, MQTTClient
 from gpiControl import inicializaBoard, definePinoComoSaida, escreveParaPorta
 
-# setup de portas gpio
-inicializaBoard()
-#Relay 1
-definePinoComoSaida(11)
-#Relay 2
-definePinoComoSaida(12)
-#LED
-definePinoComoSaida(15)
+# Colocar aqui o número físico das portas que pretende usar como saída
+# portas - ["relay1", "relay2", "LED"]
+portas_em_uso = [11, 12,15]
 
-# aio = Client(username='Dalonso', key='aio_ClzS14KFNXbYHWmoD7jmqr0qnbXf')
+# Configuração do adafruit
+adafruit_Username='Dalonso' #change to your username
+adafruit_Key='aio_ClzS14KFNXbYHWmoD7jmqr0qnbXf' #change to your adafruit key
+adafruit_Feed='testrpi' #change to the name of your feed
+
+# como mandar data para um feed
 # aio.send('testrpi', randint(0,50))
 
+# setup de portas gpio
+inicializaBoard()
+for porta in portas_em_uso:
+	definePinoComoSaida(porta)
 
 def connected(client):
-	adafruit_Feed='testrpi' #change to the name of your feed
 	client.subscribe(adafruit_Feed)
 
 def message(client, feed_id, payload):
@@ -37,8 +40,7 @@ def message(client, feed_id, payload):
 		print("relay ainda ainda não implementado")
 
 
-adafruit_Username='Dalonso' #change to your username
-adafruit_Key='aio_ClzS14KFNXbYHWmoD7jmqr0qnbXf' #change to your adafruit key
+# Inicializa o cliente mqtt com minhas informações do adafruit
 client = MQTTClient(username=adafruit_Username, key=adafruit_Key)
 
 # Setup the callback functions defined above.
