@@ -23,6 +23,7 @@ def connected(client):
 
 def message(client, feed_id, payload):
 	print(payload)
+	payload=payload.replace(" ", "").replace("the", "")
 	if payload.lower() == '1on':
 		escreveParaPorta(11,0)
 	elif payload.lower() == '1off':
