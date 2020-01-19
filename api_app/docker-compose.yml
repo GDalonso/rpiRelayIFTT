@@ -1,0 +1,15 @@
+version: '3' #Versão do docker compose
+services: #vou listar os serviços
+  api_app: #nome do serviço que eu quero criar
+    build: #Instrução de builds de imagens
+      dockerfile: api_app.dockerfile #indica o dockerfile de build
+      context: . #indica que tem que procurar o dockerfile na pasta atual
+    image: python #constrói a partir da imagem do python
+    container_name: RelayControlApi #nome do container
+    ports:
+      - 5000:5000 #mapeia uma porta do container pra format
+    # networks:
+      # - minha_rede          Coloca os containers na minha_rede
+# networks: configs de rede
+  # - minha_rede              cria a rede minha_rede
+    # driver: bridge          define o driver da rede

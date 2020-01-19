@@ -13,11 +13,11 @@ Controle de um relay com uma raspberry pi via google assistant e IFTT usando Ada
 ### IFTTT
 - Criar um applet
 - This : Google assistant -> say a phrase with both a number and a text ingredient
-- Turn relay number # $ 
+- Turn relay number # $
     - '#' variável de número da google assistant, diga o número do relay
     - '$' variável de texto da google assistant, diga on ou off
 - escrever {{NumberField}}{{TextField}} pro feed do adafruit que vc criou
-- colocar o nome do feed na variável adafruit_Feed 
+- colocar o nome do feed na variável adafruit_Feed
 
 - python3 adafruit.py
 
