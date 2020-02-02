@@ -11,7 +11,6 @@ def inicializaBoard():
 def definePinoComoSaida(numeroPino):
     # define um pino como saída
     GPIO.setup(numeroPino, GPIO.OUT)
-    escreveParaPorta(numeroPino, 0)  # Desliga os relays por default
 
 
 def definePinoComoEntrada(numeroPino):
